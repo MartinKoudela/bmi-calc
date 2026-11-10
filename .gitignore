@@ -42,3 +42,39 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+secrets.json
+credentials.json
+*.secret
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Angular
+/.angular/
+
+# Package manager caches
+.npm/
+.yarn/
+.pnpm-store/
+
+# OS / editor extras
+*.swp
+*.swo
+*~
+desktop.ini
+.Spotlight-V100
+.Trashes
