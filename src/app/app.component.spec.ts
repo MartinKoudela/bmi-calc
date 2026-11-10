@@ -4,9 +4,8 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
-    })
-      .compileComponents();
+      declarations: [AppComponent],
+    }).compileComponents();
   });
 
   it('should create the app', () => {
@@ -15,10 +14,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it(`should have as title 'bmi-calculator'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    await fixture.whenStable();
+    const app = fixture.componentInstance;
+    expect(app.title).toEqual('bmi-calculator');
+  });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, bmi-calc');
+    expect(compiled.querySelector('.content span')?.textContent).toContain(
+      'bmi-calculator app is running!',
+    );
   });
 });
